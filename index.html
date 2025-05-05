@@ -7,27 +7,89 @@
 
         <link rel="stylesheet" type="text/css" href="./css/style.css">
         <link rel="stylesheet" type="text/css" href="./css/all.min.css">
+        <style>
+            /* 添加动画相关样式 */
+            .animate-on-scroll {
+                opacity: 0;
+                transform: translateY(30px);
+                transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            }
+            
+            .animate-on-scroll.animated {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            /* 延迟动画 */
+            .animate-delay-1 { transition-delay: 0.2s; }
+            .animate-delay-2 { transition-delay: 0.4s; }
+            .animate-delay-3 { transition-delay: 0.6s; }
+            
+            /*a 赞助弹窗样式 */
+            .modal {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.8);
+                z-index: 1000;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            .modal-content {
+                max-width: 80%;
+                max-height: 80%;
+            }
+            
+            .modal-content img {
+                width: 40%;
+                height: auto;
+                border-radius: 8px;
+                box-shadow: 0 0 20px rgba(0,0,0,0.5);
+            }
+            
+            .close-modal {
+                position: absolute;
+                top: 20px;
+                right: 30px;
+                color: white;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            
+            .sponsor-btn {
+                background-color: #FF5722;
+                margin-left: 10px;
+            }
+            
+            .sponsor-btn:hover {
+                background-color: #E64A19;
+            }
+        </style>
     </head>
     <body>
         <header>
             <div class="container">
-                <div class="logo">AppleBlock</div>
-                <div class="tagline">一个来自社区的、精选Minecraft服务器</div>
-                <div class="server-ip">mc.appleblock.cn</div>
+                <div class="logo animate-on-scroll">AppleBlock</div>
+                <div class="tagline animate-on-scroll animate-delay-1">一个来自社区的、精选Minecraft服务器</div>
+                <div class="server-ip animate-on-scroll animate-delay-2">mc.appleblock.cn</div>
             </div>
         </header>
         <section>
             <div class="container">
-                <h2 class="section-title">服务器特色</h2>
+                <h2 class="section-title animate-on-scroll">服务器特色</h2>
                 <div class="features">
-                    <div class="feature-card">
+                    <div class="feature-card animate-on-scroll">
                         <div class="feature-icon">
                             <i class="fa fa-server"></i>
                         </div>
                         <h3 class="feature-title">服务器游玩稳定</h3>
                         <p>服务器稳定，使用各地服务器多节点中转本地服务器流量，延迟极低，游戏TPS平均20，流畅稳定。<br>服务器配置文件由服主精心调整，流畅和可玩性完美平衡。</p>
                     </div>
-                    <div class="feature-card">
+                    <div class="feature-card animate-on-scroll animate-delay-1">
                         <div class="feature-icon">
                             <i class="fa fa-gamepad"></i>
                         </div>
@@ -39,57 +101,107 @@
         </section>
         <section style="background-color: var(--light-color);">
             <div class="container">
-                <h2 class="section-title">珍贵图片集</h2>
+                <h2 class="section-title animate-on-scroll">珍贵图片集</h2>
                 <div class="gallery">
-                    <img src="./images/1.png">
-                    <img src="./images/2.png">
-                    <img src="./images/3.png">
-                    <img src="./images/4.png">
+                    <img src="./images/1.png" height="200" class="animate-on-scroll">
+                    <img src="./images/5.jpg" height="200" class="animate-on-scroll animate-delay-1">
+                    <img src="./images/4.png" height="200" class="animate-on-scroll animate-delay-2">
                 </div>
             </div>
         </section>
         <section>
             <div class="container">
-                <h2 class="section-title">如何加入我们</h2>
+                <h2 class="section-title animate-on-scroll">如何加入我们</h2>
                 <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <p>加入AppleBlock服务器非常简单！只需按照以下步骤操作：</p>
-                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; text-align: left;">
+                    <p class="animate-on-scroll">加入AppleBlock服务器非常简单！只需按照以下步骤操作：</p>
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; text-align: left;" class="animate-on-scroll">
                         <h2>Java版</h2>
                         <h3 style="color: var(--primary-color);">步骤 1: 打开Minecraft Java版</h3>
                         <p>确保你使用的是Minecraft Java版，版本1.8.X-1.21.X（我们支持多个版本）</p>
                         <h3 style="color: var(--primary-color); margin-top: 1.5rem;">步骤 2: 添加服务器</h3>
-                        <p>点击"多人游戏" → "添加服务器" → 输入服务器名称和地址：<strong>mc.appleblock.com</strong></p>
+                        <p>点击"多人游戏" → "添加服务器" → 输入服务器名称和地址：<strong>mc.appleblock.cn</strong></p>
                         
                         <h3 style="color: var(--primary-color); margin-top: 1.5rem;">步骤 3: 加入游戏</h3>
                         <p>选择我们的服务器并点击"加入服务器"，开始你的冒险！</p>
                     </div>
-                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; text-align: left;">
+                    <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem; text-align: left;" class="animate-on-scroll animate-delay-1">
                         <h2>Bedrock版</h2>
                         <div class="server-ip" onclick="callc()" title="Click to call client" style="font-family: 仿宋;">无需配置，点此唤起</div>
                     </div>
                 </div>
             </div>
-        </section>
+        </section>        
         <section>
             <div class="container" style="text-align: center;">
-                <h2 class="section-title">准备好加入冒险了吗？</h2>
-                <p style="max-width: 700px; margin: 0 auto 1.5rem;">AppleBlock服务器欢迎所有热爱Minecraft的玩家。无论你是建筑大师、红石工程师还是生存达人，这里都有你的一席之地！</p>
-                <div class="server-ip">mc.appleblock.com</div>
+                <h2 class="section-title animate-on-scroll">准备好加入冒险了吗？</h2>
+                <p style="max-width: 700px; margin: 0 auto 1.5rem;" class="animate-on-scroll">AppleBlock服务器欢迎所有热爱Minecraft的玩家。无论你是建筑大师、红石工程师还是生存达人，这里都有你的一席之地！</p>
+                <div class="server-ip animate-on-scroll animate-delay-1">mc.appleblock.cn</div>
                 <div style="margin-top: 2rem;">
-                    <a href="https://kdocs.cn/l/ctcpuxka9thK" class="btn"><i class="fas fa-book"></i> 查看Wiki</a>
-                    <a href="https://github.com/AppleBlockTeam" class="btn" style="background-color: #2196F3;"><i class="fab fa-github"></i> 查看Github</a>
+                    <a href="https://jq.qq.com/?_wv=1027&k=SQi1sZly" class="btn animate-on-scroll animate-delay-1" style="background-color: #2196F3;"><i class="fab fa-qq"></i> 加入QQ群</a>
+                    <a href="https://kdocs.cn/l/ctcpuxka9thK" class="btn animate-on-scroll animate-delay-1"><i class="fas fa-book"></i> 查看Wiki</a>
+                    <a href="https://github.com/AppleBlockTeam" class="btn animate-on-scroll animate-delay-2" style="background-color: #222;"><i class="fab fa-github"></i> 查看Github</a>
+                    <button class="btn animate-on-scroll animate-delay-2 sponsor-btn" onclick="openSponsorModal()"><i class="fas fa-heart"></i> 赞助我们</button>
                 </div>
             </div>
         </section>
+        
+        <!-- 赞助弹窗 -->
+        <div id="sponsorModal" class="modal">
+            <span class="close-modal" onclick="closeSponsorModal()">&times;</span>
+            <div class="modal-content">
+                <img src="./images/6.png">
+            </div>
+        </div>
+        
         <footer>
             <div class="container">
-                <p>&copy; 2025 AppleBlockTeam. All rights reversed.</p>
-                <strong>Minecraft是Mojang Studios的商标，本服务器与Mojang/Microsoft无官方关联。</strong>
+                <p class="animate-on-scroll">&copy; 2025 AppleBlockTeam. All rights reversed.</p>
+                <strong class="animate-on-scroll animate-delay-1">Minecraft是Mojang Studios的商标，本服务器与Mojang/Microsoft无官方关联。</strong>
             </div>
         </footer>
         <script>
             function callc() {
                 window.location.href = "minecraft:?addExternalServer=AppleBlock%E7%BA%AF%E7%94%9F%E5%AD%98|mc.appleblock.cn:19132";
+            }
+            
+            // 滚动动画效果
+            document.addEventListener('DOMContentLoaded', function() {
+                const animateElements = document.querySelectorAll('.animate-on-scroll');
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('animated');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                });
+                
+                animateElements.forEach(element => {
+                    observer.observe(element);
+                });
+            });
+            
+            // 赞助弹窗功能
+            function openSponsorModal() {
+                document.getElementById('sponsorModal').style.display = 'flex';
+                document.body.style.overflow = 'hidden'; // 防止背景滚动
+            }
+            
+            function closeSponsorModal() {
+                document.getElementById('sponsorModal').style.display = 'none';
+                document.body.style.overflow = 'auto'; // 恢复滚动
+            }
+            
+            // 点击弹窗外部关闭
+            window.onclick = function(event) {
+                const modal = document.getElementById('sponsorModal');
+                if (event.target == modal) {
+                    closeSponsorModal();
+                }
             }
         </script>
     </body>

@@ -12,44 +12,67 @@ body {
     padding: 0;
     background-color: #f5f5f5;
     color: #333;
-    line-height: 1.6;
+   
 }
 
 header {
-    background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('../images/1.png');
+    background-size: cover;
+    background-position: center;
     color: white;
-    text-align: center;
-    padding: 2rem 0;
+    text-align: left;
+    padding: 8rem 0; /* 增加垂直内边距 */
+    min-height: 60vh; /* 设置最小高度为视窗高度的60% */
+    display: flex;
+    align-items: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+}           
+header .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0; /* 移除自动居中 */
+    padding: 0 5%; /* 增加左右内边距 */
+    text-align: left; /* 确保内容左对齐 */
 }
 
 .logo {
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+    text-align: left; /* 确保左对齐 */
 }
 
 .tagline {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     opacity: 0.9;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+    max-width: 800px;
+    margin-bottom: 2rem;
+    text-align: left; /* 确保左对齐 */
 }
 
 .server-ip {
-    background-color: var(--accent-color);
+    background-color: #FFC107;
     color: #333;
     display: inline-block;
-    padding: 0.5rem 1.5rem;
+    padding: 0.8rem 2rem;
     border-radius: 50px;
     font-weight: bold;
     margin-top: 1rem;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 1.2rem;
+    font-family: monospace;
+    font-size: 1.5rem;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center; /* 按钮内部文字居中 */
 }
 
 .server-ip:hover {
     transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
 }
 
 .container {
